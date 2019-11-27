@@ -1,0 +1,12 @@
+<%=@company.name%>
+
+<%= @company.offices%>
+<%=@company.employees%>
+
+<ul>
+
+<%@company.offices.each do |o|%>
+<li><%= o.building_id%></li>
+<%end%>
+</ul>
+
