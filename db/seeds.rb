@@ -23,6 +23,7 @@ weworks.each do |we|
   Building.create(we)
 end
 
+
 companies = [
   "Microsoft",
   "Flatiron",
@@ -46,6 +47,30 @@ titles = [
   "COO",
   "Instructor"
 ]
+
+i = 0
+floors = [2,1,5,6,4]
+
+5.times do
+  Office.create(building: Building.first, company_id: Company.all.pluck(:id).sample, floor: floors[i])
+  i += 1
+end
+
+i = 0
+floors = [2,7,5,3,4,8,19,20,16]
+
+9.times do
+  Office.create(building: Building.second, company_id: Company.all.pluck(:id).sample, floor: floors[i]) 
+  i += 1
+end
+
+i = 0
+floors = [6,2,3,4]
+
+4.times do
+  Office.create(building: Building.third, company_id: Company.all.pluck(:id).sample, floor: floors[i]) 
+  i += 1
+end
 
 100.times do 
   Employee.create(
