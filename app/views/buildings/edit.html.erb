@@ -1,0 +1,11 @@
+<%= form_for(@building) do |f|%>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :rent_per_floor %>
+    <%= f.number_field :rent_per_floor %><br>
+
+    <%= f.submit %>
+
+<% end %>

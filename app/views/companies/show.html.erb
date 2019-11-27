@@ -1,0 +1,35 @@
+<h2><%= @company.name%></h2>
+
+<p>Total rent paid by this company: £<%= number_with_delimiter(@company.total_rent, delimiter: ',')%></p>
+
+<h4>Company offices:</h4>
+
+<% @company.offices.order(:building_id).each do |o|%>
+    <%= o.building.name%>
+    floor <%= o.floor%><br>
+<% end %>
+
+<h4>Company employees:</h4>
+<% @company.employees.order(:name).each do |e| %>
+    <%= e.name %> (<%= e.title %>)
+    <%= link_to("Delete", employee_path(e), method: :delete) %><br>
+<% end %>
+
+<br>
+<br>
+
+<%= form_for(@employee) do |f|%>
+
+    <%= f.submit "Add new employee"%><br>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.hidden_field :company_id, value: @company.id %><br>
+
+    
+
+<% end %>
