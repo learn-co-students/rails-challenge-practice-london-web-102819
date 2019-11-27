@@ -1,0 +1,15 @@
+<%= form_for(@building) do |f| %>
+
+<label>Name:</label><br>
+  <%= f.text_field :name %><br>
+  <label>Country:</label><br>
+  <%= f.text_area :country %><br>
+<label>Address:</label><br>
+  <%= f.text_area :address %><br>
+  <label>Rent per floor:</label><br>
+  <%= f.text_area :rent_per_floor %><br>
+<label>Number of Floors:</label><br>
+  <%= f.text_field :number_of_floors %><br>
+ 
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,12 @@
+<%=@building.name%><br>
+
+Country: <%=@building.country%><br>
+Address: <%=@building.address%><br>
+Rent per floor: <%=@building.rent_per_floor%><br>
+Floors: <%= @building.number_of_floors%><br>
+Total rent: <%=@building.total_rent%><br>
+<% @building.companies.each do |c|%>
+
+Company name:<%=c.name%><br>
+
+<%end%>
